@@ -1,0 +1,34 @@
+%This is a little bit different sorting function 
+%This is MATLAB code (works in Octave also)
+
+
+function [sorted_vector] = kvs_sort(vector)
+    a1 = 0;
+    a2 = 0;
+    while(a1 + a2 < 2)
+         a1 = 1;
+              for i = 1 : 2: length (vector)
+                 if i < length(vector)
+                     if vector(i) > vector(i+1)
+                         temp = vector(i);
+                         vector(i) = vector(i+1);
+                         vector(i+1) = temp;
+                          a1 = 0;
+                     end
+                 end 
+              end
+         a2 = 1;
+         for i = 2 : 2: length (vector)
+           if i < length(vector)
+              if vector(i) > vector(i+1)
+                  temp = vector(i);
+                  vector(i) = vector(i+1);
+                  vector(i+1) = temp;
+                  a2 = 0;
+              end
+           end
+          
+         end
+    end
+    sorted_vector = vector;
+end
